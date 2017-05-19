@@ -50,8 +50,9 @@ function getApplicationText(notif) {
 }
 
 function addLinks(embed, notif) {
+    var characterName = notif.senderName.replace(" ","%20");
     embed.addField("zKillboard", `https://zkillboard.com/character/${notif.charID}/`, true);
-    embed.addField("EVE Who", `http://evewho.com/pilot/${notif.senderName}/`, true);
+    embed.addField("EVE Who", `http://evewho.com/pilot/${characterName}/`, true);
     return embed;
 }
 
@@ -128,6 +129,7 @@ async function send() {
     let notifs = await doit();
 
     notifs.forEach(([message, embed]) => {
+        console.log(message);
         hook.send(message, {embeds: [embed]});
     });
 }
