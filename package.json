@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "discord.js": "^11.1.0",
+    "eveonlinejs": "^2.0.2",
+    "js-yaml": "^3.8.4",
     "moment": "^2.18.1"
   }
 }
