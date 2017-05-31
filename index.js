@@ -50,7 +50,7 @@ function getApplicationText(notif) {
 }
 
 function addLinks(embed, notif) {
-    var characterName = notif.senderName.replace(" ","%20");
+    var characterName = notif.senderName.replace(/ /g,"%20");
     embed.addField("zKillboard", `https://zkillboard.com/character/${notif.charID}/`, true);
     embed.addField("EVE Who", `http://evewho.com/pilot/${characterName}/`, true);
     return embed;
